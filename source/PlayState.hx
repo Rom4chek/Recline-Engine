@@ -1383,16 +1383,6 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
-		if(!foundFile) {
-			fileName = Paths.video(name);
-			#if sys
-			if(FileSystem.exists(fileName))
-			#else
-			if(OpenFlAssets.exists(fileName))
-				foundFile = true;
-			#end
-		}
-
 		if(foundFile) {
 			inCutscene = true;
 			var bg = new FlxSprite(-FlxG.width, -FlxG.height).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
@@ -1414,7 +1404,7 @@ class PlayState extends MusicBeatState
 		#end
 		startAndEnd();
 	}
-}
+
 	function startAndEnd()
 	{
 		if(endingSong)
