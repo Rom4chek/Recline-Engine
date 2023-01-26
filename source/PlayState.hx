@@ -2112,7 +2112,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	override function openSubState(SubState:FlxSubState)
+	function openSubState(SubState:FlxSubState)
 	{
 		if (paused)
 		{
