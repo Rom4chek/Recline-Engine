@@ -7,6 +7,8 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
+    public static var oldInput:Bool = true;
+    public static var sysInfo:String = 'OG FPS';
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var opponentStrums:Bool = true;
@@ -111,8 +113,10 @@ class ClientPrefs {
 
 	public static function saveSettings() {
 	    FlxG.save.data.screenRes = screenRes;
+                FlxG.save.data.oldInput = oldInput;
                 FlxG.save.data.drainType = drainType;
 		FlxG.save.data.downScroll = downScroll;
+		FlxG.save.data.sysInfo = sysInfo;
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.opponentStrums = opponentStrums;
 		FlxG.save.data.showFPS = showFPS;
@@ -189,6 +193,9 @@ class ClientPrefs {
 		if(FlxG.save.data.opponentStrums != null) {
 			opponentStrums = FlxG.save.data.opponentStrums;
 		}
+		if(FlxG.save.data.sysInfo != null) {
+			sysInfo = FlxG.save.data.sysInfo;
+		}
 		if(FlxG.save.data.showFPS != null) {
 			showFPS = FlxG.save.data.showFPS;
 			if(Main.fpsVar != null) {
@@ -197,6 +204,9 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.flashing != null) {
 			flashing = FlxG.save.data.flashing;
+		}
+                if(FlxG.save.data.oldInput != null) {
+			oldInput = FlxG.save.data.oldInput;
 		}
 		if(FlxG.save.data.globalAntialiasing != null) {
 			globalAntialiasing = FlxG.save.data.globalAntialiasing;
