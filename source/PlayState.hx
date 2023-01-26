@@ -292,7 +292,7 @@ class PlayState extends MusicBeatState
 	// stores the last combo score objects in an array
 	public static var lastScore:Array<FlxSprite> = [];
 
-	override public function create()
+	 public function create()
 	{
 		Paths.clearStoredMemory();
 
@@ -2154,7 +2154,7 @@ class PlayState extends MusicBeatState
 		super.openSubState(SubState);
 	}
 
-	override function closeSubState()
+	 function closeSubState()
 	{
 		if (paused)
 		{
@@ -2208,7 +2208,7 @@ class PlayState extends MusicBeatState
 		super.closeSubState();
 	}
 
-	override public function onFocus():Void
+	 public function onFocus():Void
 	{
 		#if desktop
 		if (health > 0 && !paused)
@@ -2227,7 +2227,7 @@ class PlayState extends MusicBeatState
 		super.onFocus();
 	}
 	
-	override public function onFocusLost():Void
+	 public function onFocusLost():Void
 	{
 		#if desktop
 		if (health > 0 && !paused)
@@ -2256,7 +2256,7 @@ class PlayState extends MusicBeatState
 	var canPause:Bool = true;
 	var limoSpeed:Float = 0;
 
-	override public function update(elapsed:Float)
+	 public function update(elapsed:Float)
 	{
 		/*if (FlxG.keys.justPressed.NINE)
 		{
@@ -4300,7 +4300,7 @@ if (ClientPrefs.drainType == 'Always' && healthBar.percent > 20){
 	}
 
 	private var preventLuaRemove:Bool = false;
-	override function destroy() {
+	 function destroy() {
 		preventLuaRemove = true;
 		for (i in 0...luaArray.length) {
 			luaArray[i].call('onDestroy', []);
@@ -4330,7 +4330,7 @@ if (ClientPrefs.drainType == 'Always' && healthBar.percent > 20){
 	}
 
 	var lastStepHit:Int = -1;
-	override function stepHit()
+	 function stepHit()
 	{
 		super.stepHit();
 		if (Math.abs(FlxG.sound.music.time - (Conductor.songPosition - Conductor.offset)) > 20
@@ -4353,7 +4353,7 @@ if (ClientPrefs.drainType == 'Always' && healthBar.percent > 20){
 
 	var lastBeatHit:Int = -1;
 	
-	override function beatHit()
+	 function beatHit()
 	{
 		super.beatHit();
 
